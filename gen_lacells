@@ -37,7 +37,7 @@ fi
 if [ -e towers_opencellid.csv ] ; then
     mv -f towers_opencellid.csv towers_opencellid.csv.bak
 fi
-wget --output-document=towers_opencellid.csv.gz "http://opencellid.org/ocid/downloads?token=${API_KEY}&filename=cell_towers.csv.gz"
+wget --output-document=towers_opencellid.csv.gz "http://opencellid.org/ocid/downloads?token=${API_KEY}&file=cell_towers.csv.gz"
 gunzip towers_opencellid.csv.gz
 
 #
