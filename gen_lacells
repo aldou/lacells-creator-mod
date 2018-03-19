@@ -24,7 +24,7 @@ fi
 NOW=`date -u "+%Y-%m-%d"`
 FNAME="https://d3r3tk5171bc5t.cloudfront.net/export/MLS-full-cell-export-${NOW}T000000.csv.gz"
 echo "${FNAME}"
-wget --output-document=towers_mozilla.csv.gz "${FNAME}"
+wget -c --output-document=towers_mozilla.csv.gz "${FNAME}"
 gunzip towers_mozilla.csv.gz
 
 #
@@ -37,7 +37,7 @@ fi
 if [ -e towers_opencellid.csv ] ; then
     mv -f towers_opencellid.csv towers_opencellid.csv.bak
 fi
-wget --output-document=towers_opencellid.csv.gz "http://opencellid.org/ocid/downloads?token=${API_KEY}&file=cell_towers.csv.gz"
+wget -c --output-document=towers_opencellid.csv.gz "http://opencellid.org/ocid/downloads?token=${API_KEY}&file=cell_towers.csv.gz"
 gunzip towers_opencellid.csv.gz
 
 #
